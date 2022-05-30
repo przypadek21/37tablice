@@ -1,6 +1,15 @@
 import random
-from random import randint
+from itertools import product
+from string import ascii_lowercase
 
 tablice_rejestracyjne = []
-numbers = (0,9)
-random.randint(0,9)
+
+while True:
+    litery = [''.join(i) for i in product(ascii_lowercase, repeat=3)]
+    cyfry = [random.randrange(0,10**4)]
+    tablica = random.choice(litery) + str(random.choice(cyfry))
+    if tablica in tablice_rejestracyjne:
+        break
+    else:
+        tablice_rejestracyjne.append(tablica)
+        print(tablice_rejestracyjne)
