@@ -9,14 +9,11 @@ class PlatesGenerator:
         litery = [''.join(i) for i in product(ascii_lowercase, repeat=3)]
         cyfry = [random.randrange(0, 10 ** 4)]
         tablica = random.choice(litery) + str(random.choice(cyfry))
-        while True:
-            if tablica in tablice_rejestracyjne:
-                continue
-            else:
-                tablice_rejestracyjne.append(tablica)
+        tablice_rejestracyjne.append(tablica)
 
-        return random.choice(tablice_rejestracyjne)
+        return tablica
 
+while True:
+        pg = PlatesGenerator()
+        print(pg.generate_plates())
 
-pg = PlatesGenerator()
-pg.generate_plates()
