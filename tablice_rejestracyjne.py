@@ -9,7 +9,7 @@ while True:
     cyfry = [random.randrange(0,10**4)]
     tablica = random.choice(litery) + str(random.choice(cyfry))
     if tablica in tablice_rejestracyjne:
-        break
+        continue
     else:
         tablice_rejestracyjne.append(tablica)
-        print(tablice_rejestracyjne)
+        print(random.choice(tablice_rejestracyjne))
