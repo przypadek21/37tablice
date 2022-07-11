@@ -6,10 +6,13 @@ class TestTablice(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.plates_list = []
         cls.plates = PlatesGenerator().generate_plates()
-        if cls.plates not in cls.plates_list:
+        cls.plates_list = []
+        while len(cls.plates_list) < 5:
             cls.plates_list.append(cls.plates)
+        cls.plates = PlatesGenerator().generate_plates()
+
+
         print(cls.plates_list)
 
 
